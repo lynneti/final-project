@@ -2,344 +2,226 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynette Shen's Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
         body {
-            background: #d2f8fd;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-        ol, ul, li {
-            list-style-type: none;
-        }
-        a {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: rgb(53, 144, 172);
-            text-decoration: none;
-        }
+
         nav {
-            width: 100%;
-            height: 50px;
-            margin: 0 auto;
             display: flex;
-            justify-content: center;
-            background: white;
-        }
-        nav > img {
-            height: 50px;
-            width: 225px;
-        }
-        nav > ul {
-            width: 800px;
-            height: 50px;
-            line-height: 50px;
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: space-around;
+            padding: 20px 10%;
+            background-color: rgba(31, 31, 31, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-        nav > ul > li {
-            height: 50px;
-            z-index: 1;
+
+        nav img {
+            height: 40px;
         }
-        nav > ul > li:nth-child(3) {
-            text-align: center;
-            font-size: 1.1em;
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
             font-weight: bold;
-            color: rgb(53, 144, 172);
-            cursor: pointer;
+            transition: color 0.3s;
         }
-        nav > ul > li:nth-child(3) > .hidden {
-            height: 0;
-            overflow: hidden;
-            transition: all 0.5s linear;
-            background: rgba(255, 255, 255, 0.3);
+
+        nav ul li a:hover {
+            color: #ff5722;
         }
-        nav > ul > li:nth-child(3) > .hidden > li {
-            height: 45px;
-        }
-        nav > ul > li:nth-child(3):hover > .hidden {
-            height: 270px;
-        }
-        nav > ul > li:nth-child(3) > ul > li:hover {
-            background: rgba(0, 0, 0, 0.75);
-        }
-        section {
-            width: 1300px;
-            height: 400px;
-            margin: 0 auto;
-        }
-        section > ul {
-            width: 100%;
-            height: 100%;
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             position: relative;
-            transform-style: preserve-3d;
-            perspective: 4000px;
+            overflow: hidden;
         }
-        section > ul > li {
-            width: 600px;
-            height: 300px;
+
+        header::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -150px;
-            margin-left: -300px;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.5s linear;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255,87,34,0.3), transparent);
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            z-index: 1;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            z-index: 1;
+            position: relative;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        header a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1;
+            position: relative;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        header a:hover {
+            background-color: #e64a19;
+            transform: scale(1.1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 10%;
+            background-color: #202020;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
-        section > ul > li > img {
-            width: 100%;
-            height: 100%;
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+            box-shadow: 0 8px 15px rgba(255, 87, 34, 0.5);
         }
-        main {
-            width: 1300px;
-            margin: 0 auto;
-            background: #f2f2f2;
-        }
-        main > .top {
-            width: 80%;
-            margin: 0 auto;
-            height: 250px;
-        }
-        main > .top > ul {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            top: -25px;
-        }
-        main > .top > ul > li {
-            width: 30%;
-            height: 100%;
-            background: #fdfdfd;
-            border-radius: 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-        }
-        main > .top > ul > li > span {
-            height: 50px;
-            width: 50px;
-            font-size: 40px;
-            line-height: 50px;
-            text-align: center;
-            color: #27b3c6;
-        }
-        main > .top > ul > li > h4 {
-            color: #8c7e82;
-            cursor: default;
-        }
-        main > .top > ul > li > p {
-            height: 40%;
-            width: 80%;
-            text-align: center;
-            color: #bfbfbf;
-            cursor: default;
-        }
-        main > .second {
-            width: 80%;
-            height: 550px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        main > .second > h4 {
-            border-left: solid 10px #2cc3dc;
-            color: #353535;
-            text-indent: 1em;
-            cursor: default;
-            font-size: 24px;
-        }
-        main > .second > div {
-            width: 100%;
-            height: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-        main > .second > div > img {
-            width: 25%;
-            height: 100%;
-        }
-        main > .second > div > div {
-            width: 75%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        main > .second > div > div > ul {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #d2f8fd;
-        }
-        main > .second > div > div > ul > li {
-            height: 25%;
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            line-height: 30px;
-        }
-        main > .second > div > div > ul > li > p {
-            color: black;
-            font-size: 20px;
-            font-style: italic;
-            cursor: default;
-        }
-        main > .second > div > div > ul > li > h4 {
-            color: #534f4f;
-            text-align: right;
-            cursor: default;
-        }
-        main > .last {
-            width: 1300px;
-            height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            margin: 0 auto;
-        }
-        main > .last > h4 {
-            width: 80%;
-            border-left: solid 10px #2cc3dc;
-            color: #353535;
-            text-indent: 1em;
-            cursor: default;
-            margin: 0 auto;
-            font-size: 24px;
-        }
-        main > .last > ul {
-            width: 80%;
-            height: 300px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        main > .last > ul > li {
-            width: 250px;
-            height: 250px;
-        }
-        main > .last > ul > li > a > img {
-            width: 100%;
-            height: 100%;
-        }
-        main > .last > ul > li > a > img:hover {
-            opacity: 0.6;
-        }
+
         footer {
-            height: 150px;
-            width: 1300px;
-            background: white;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            color: #aaa;
+            margin-top: 50px;
+            position: relative;
         }
-        footer > img {
-            width: 300px;
-            height: 50px;
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, #ff5722, transparent);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff5722;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-<!-- Navigation Bar -->
-<nav>
-    <img src="images/img001.png" alt="My Logo">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="html/about_me.html">About Me</a></li>
-        <li>
-            Projects
-            <ul class="hidden">
-                <li><a href="html/hobbies.html">Hobbies</a></li>
-                <li><a href="html/portfolio.html">Portfolio</a></li>
-                <li><a href="html/design_mockups.html">Design Mockups</a></li>
-                <li><a href="html/likes.html">Likes</a></li>
-                <li><a href="html/dislikes.html">Dislikes</a></li>
-            </ul>
-        </li>
-        <li><a href="html/contact.html">Contact Me</a></li>
-    </ul>
-</nav>
-<!-- Main Section -->
-<section>
-    <ul>
-        <li><img src="images/photo1.jpg" alt="Project 1"></li>
-        <li><img src="images/photo2.jpg" alt="Project 2"></li>
-        <li><img src="images/photo3.jpg" alt="Project 3"></li>
-        <li><img src="images/photo4.jpg" alt="Project 4"></li>
-        <li><img src="images/photo5.jpg" alt="Project 5"></li>
-    </ul>
-</section>
-<!-- Content Section -->
-<main>
-    <div class="top">
+    <!-- Navigation Bar -->
+    <nav>
+        <img src="images/logo.png" alt="Logo">
         <ul>
-            <li>
-                <span>&#9733;</span>
-                <h4>My Story</h4>
-                <p>Learn more about who I am and my journey so far.</p>
-            </li>
-            <li>
-                <span>&#10024;</span>
-                <h4>My Skills</h4>
-                <p>Explore the talents and skills that make me unique.</p>
-            </li>
-            <li>
-                <span>&#9889;</span>
-                <h4>My Vision</h4>
-                <p>See the goals I aim to achieve through design and storytelling.</p>
-            </li>
+            <li><a href="#home">Home</a></li>
         </ul>
-    </div>
-    <div class="second">
-        <h4>Inspirational Quotes</h4>
-        <div>
-            <img src="images/quote1.png" alt="Inspirational Quote 1">
-            <div>
-                <ul>
-                    <li>
-                        <p>"Even in the face of challenges, never give up."</p>
-                        <h4>– Inspired by my journey</h4>
-                    </li>
-                    <li>
-                        <p>"Creativity is about seeing the world differently."</p>
-                        <h4>– My motto</h4>
-                    </li>
-                </ul>
-            </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
+        <h1>Welcome to Lynette Shen's Portfolio</h1>
+        <p>Hi! I'm Lynette Shen, a creative student passionate about photography, storytelling, and design. Explore my hobbies, talents, and design mockups here!</p>
+        <a href="#gallery">See My Work</a>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <img src="images/project1.jpg" alt="Project 1">
+        <img src="images/project2.jpg" alt="Project 2">
+        <img src="images/project3.jpg" alt="Project 3">
+        <img src="images/project4.jpg" alt="Project 4">
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Lynette Shen. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">&#x1F426; Twitter</a>
+            <a href="#" target="_blank">&#x1F4F7; Instagram</a>
+            <a href="#" target="_blank">&#x1F4DA; LinkedIn</a>
         </div>
-    </div>
-    <div class="last">
-        <h4>Highlight Moments</h4>
-        <ul>
-            <li><a href="html/project1.html" title="My Portfolio" target="_blank"><img src="images/portfolio1.jpg" alt="Portfolio Highlight"></a></li>
-            <li><a href="html/project2.html" title="Project 2" target="_blank"><img src="images/portfolio2.jpg" alt="Project 2"></a></li>
-            <li><a href="html/project3.html" title="Project 3" target="_blank"><img src="images/portfolio3.jpg" alt="Project 3"></a></li>
-        </ul>
-    </div>
-</main>
-<!-- Footer Section -->
-<footer>
-    <img src="images/logo_footer.png" alt="Footer Logo">
-    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-</footer>
+    </footer>
 </body>
 </html>
