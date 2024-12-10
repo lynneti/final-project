@@ -116,12 +116,27 @@
             transform: scale(1.1);
         }
 
+        section {
+            padding: 50px 10%;
+            background-color: #202020;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff5722;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 50px 10%;
-            background-color: #202020;
         }
 
         .gallery img {
@@ -196,6 +211,9 @@
         <img src="images/logo.png" alt="Logo">
         <ul>
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#gallery">Drawings Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -203,25 +221,39 @@
     <header id="home">
         <h1>Welcome to Lynette Shen's Portfolio</h1>
         <p>Hi! I'm Lynette Shen, a creative student passionate about photography, storytelling, and design. Explore my hobbies, talents, and design mockups here!</p>
-        <a href="#gallery">See My Work</a>
+        <a href="#about">Learn More About Me</a>
     </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Lynette Shen, a designer who loves experimenting with visuals and creating compelling stories through art and technology. I enjoy working on projects that challenge me and allow me to grow as a creative individual.</p>
+        <p>My hobbies include drawing, photography, and exploring the latest trends in design and tech. Check out my gallery to see some of my favorite works!</p>
+    </section>
 
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
+        <h2>Drawings Gallery</h2>
         <img src="images/project1.jpg" alt="Project 1">
         <img src="images/project2.jpg" alt="Project 2">
         <img src="images/project3.jpg" alt="Project 3">
         <img src="images/project4.jpg" alt="Project 4">
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Lynette Shen. All rights reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, feel free to reach out to me through any of the platforms below:</p>
         <div class="social-icons">
             <a href="#" target="_blank">&#x1F426; Twitter</a>
             <a href="#" target="_blank">&#x1F4F7; Instagram</a>
             <a href="#" target="_blank">&#x1F4DA; LinkedIn</a>
         </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Lynette Shen. All rights reserved.</p>
     </footer>
 </body>
 </html>
