@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Lynette Shen - showcasing UX/UI case studies, design works, and contact details.">
     <title>Lynette Shen's Portfolio</title>
     <style>
         * {
@@ -23,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
+            padding: 15px 10%;
             background-color: rgba(31, 31, 31, 0.95);
             position: fixed;
             width: 100%;
@@ -56,16 +57,29 @@
             color: #ff5722;
         }
 
+        .herof {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #000;
+            background-image: url(https://i.pinimg.com/originals/79/a3/84/79a384c3c449ad01b0e57e790807b2c0.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 70%;
+            color: #fff;
+            padding: 0 8%;
+        }
+
         header {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             height: 100vh;
-            text-align: center;
+            text-align: left;
             background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             position: relative;
             overflow: hidden;
+            padding-left: 10%;
         }
 
         header::before {
@@ -152,7 +166,6 @@
             box-shadow: 0 8px 15px rgba(255, 87, 34, 0.5);
         }
 
-        /* UX/UI Case Study Interactive Image */
         .case-study img {
             width: 100%;
             border-radius: 10px;
@@ -165,7 +178,6 @@
             opacity: 0.85;
         }
 
-        /* Lightbox Modal for Image Preview */
         .modal {
             display: none;
             position: fixed;
@@ -242,89 +254,65 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav>
-        <img src="images/logo.png" alt="Logo">
+        <img src="images/logo.png" alt="Lynette Shen Logo">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#ux-ui">UX/UI Case Study</a></li>
             <li><a href="#resume">Resume</a></li>
-            <li><a href="#gallery">General Designs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <header id="home">
         <h1>Welcome to Lynette Shen's Portfolio</h1>
-        <p>Hi! I'm Lynette Shen, a creative student passionate about photography, storytelling, and design. Explore my hobbies, talents, and design mockups here!</p>
+        <p>Hi! I'm Lynette Shen, a student who loves crafting photography, storytelling, and visionary designs. Explore my skills and creative depth now.</p>
         <a href="#about">Learn More About Me</a>
     </header>
 
-    <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I'm Lynette Shen, a designer who loves experimenting with visuals and creating compelling stories through art and technology. I enjoy working on projects that challenge me and allow me to grow as a creative individual.</p>
-        <p>My hobbies include drawing, photography, and exploring the latest trends in design and tech. Check out my gallery to see some of my favorite works!</p>
+        <p>Hello! I'm Lynette Shen, a designer passionate about merging art and technology to create compelling stories and experiences. My hobbies include photography, drawing, and exploring new design trends.</p>
     </section>
 
-    <!-- UX/UI Case Study Section with Interactive Image -->
     <section class="case-study" id="ux-ui">
         <h2>UX/UI Case Study</h2>
-        <p>This section showcases a UX/UI design case study I worked on. Click on the image below to explore the project details.</p>
-        <img src="images/uxui-project-thumbnail.jpg" alt="UX/UI Case Study Image" id="case-study-image">
+        <p>This section highlights a UX/UI design project I worked on. Click the image below to view details.</p>
+        <img src="images/uxui-project-thumbnail.jpg" alt="UX/UI Case Study Thumbnail" id="case-study-image">
     </section>
 
-    <!-- Modal for Viewing Larger Image -->
     <div class="modal" id="imageModal">
         <img src="images/uxui-project-fullsize.jpg" alt="Full-size UX/UI Case Study">
     </div>
 
-    <script>
-        const caseStudyImage = document.getElementById("case-study-image");
-        const modal = document.getElementById("imageModal");
-
-        // Open modal on image click
-        caseStudyImage.addEventListener("click", () => {
-            modal.classList.add("open");
-        });
-
-        // Close modal if clicked on the background
-        modal.addEventListener("click", () => {
-            modal.classList.remove("open");
-        });
-    </script>
-
-    <!-- Resume Section -->
     <section id="resume">
         <h2>Resume</h2>
-        <p>Check out my professional background and experience. I have worked on a variety of design and creative projects that have helped me grow as a designer. You can view my full resume by <a href="link-to-resume.pdf" target="_blank">clicking here</a>.</p>
+        <p>Explore my professional background and accomplishments. <a href="link-to-resume.pdf" target="_blank">View Resume</a>.</p>
     </section>
 
-    <!-- Gallery Section for General Designs -->
     <section class="gallery" id="gallery">
-        <h2>General Designs</h2>
+        <h2>Gallery</h2>
         <img src="images/design1.jpg" alt="Design 1">
         <img src="images/design2.jpg" alt="Design 2">
         <img src="images/design3.jpg" alt="Design 3">
         <img src="images/design4.jpg" alt="Design 4">
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you'd like to get in touch, feel free to reach out to me through any of the platforms below:</p>
+        <p>Get in touch with me via these platforms:</p>
         <div class="social-icons">
-            <a href="#" target="_blank">&#x1F426; Twitter</a>
-            <a href="#" target="_blank">&#x1F4F7; Instagram</a>
-            <a href="#" target="_blank">&#x1F4DA; LinkedIn</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">LinkedIn</a>
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Lynette Shen. All Rights Reserved.</p>
     </footer>
-</body>
-</html>
+
+    <script>
+        const caseStudyImage = document.getElementById("case-study-image");
