@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Poppins', Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             background-color: #121212;
             color: #fff;
             overflow-x: hidden;
@@ -57,18 +57,6 @@
             color: #ff5722;
         }
 
-        .herof {
-            min-height: 100vh;
-            width: 100%;
-            background-color: #000;
-            background-image: url(https://i.pinimg.com/originals/79/a3/84/79a384c3c449ad01b0e57e790807b2c0.gif);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 70%;
-            color: #fff;
-            padding: 0 8%;
-        }
-
         header {
             display: flex;
             flex-direction: column;
@@ -76,7 +64,7 @@
             justify-content: center;
             height: 100vh;
             text-align: left;
-            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            background: linear-gradient(145deg, #1a1a1a, #2a3a3a);
             position: relative;
             overflow: hidden;
             padding-left: 10%;
@@ -147,6 +135,24 @@
             margin-bottom: 20px;
         }
 
+        /* Case Study Section */
+        .case-stud {
+            text-align: center;
+        }
+
+        .case-stud img {
+            width: 300px; /* Resize image to an appropriate size */
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-stud img:hover {
+            transform: scale(1.1); /* Pop-out effect */
+            box-shadow: 0 8px 15px rgba(255, 87, 34, 0.5);
+        }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -164,40 +170,6 @@
             transform: scale(1.05);
             opacity: 0.9;
             box-shadow: 0 8px 15px rgba(255, 87, 34, 0.5);
-        }
-
-        .case-study img {
-            width: 100%;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s, opacity 0.3s;
-        }
-
-        .case-study img:hover {
-            transform: scale(1.01);
-            opacity: 0.85;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 80%;
-        }
-
-        .modal.open {
-            display: flex;
         }
 
         footer {
@@ -259,38 +231,43 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
-            <li><a href="#ux-ui">UX/UI Case Study</a></li>
+            <li><a href="#case studies">Case Studies</a></li>
             <li><a href="#resume">Resume</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header id="home">
-        <h1>Welcome to Lynette Shen's Portfolio</h1>
-        <p>Hi! I'm Lynette Shen, a student who loves crafting photography, storytelling, and visionary designs. Explore my skills and creative depth now.</p>
-        <a href="#about">Learn More About Me</a>
+        <h1>
+            Hi, I'm Lynette! A 
+            <span style="color: rgba(255,87,34,0.8);">Product Designer</span> 
+            who enjoys designing creative and delightful experiences.👩🏻‍💻
+        </h1>
+        <p>
+            I'm motivated by <span style="color: rgba(255,87,34,0.8);">intentional problem-solving,</span> experienced in design thinking, and driven by empathy to create user-centric designs. 
+        </p>
+        <a href="#about" class="cta-button">Click Me!!</a>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Lynette Shen, a designer passionate about merging art and technology to create compelling stories and experiences. My hobbies include photography, drawing, and exploring new design trends.</p>
-    </section>
 
-    <section class="case-study" id="ux-ui">
-        <h2>UX/UI Case Study</h2>
-        <p>This section highlights a UX/UI design project I worked on. Click the image below to view details.</p>
-        <img src="images/uxui-project-thumbnail.jpg" alt="UX/UI Case Study Thumbnail" id="case-study-image">
-    </section>
+ <section class="case-stud" id="case studies">
+        <h2>App design</h2>
+        <p>A subletting app designed by me and my team, aimed to help coop students in their journey of finding a suitable home🏡</p>
+   <p>
+    <span style="color: rgba(255,87,34,0.8);"> CLICK IMAGE TO VIEW WORK </span>
+   </p> 
+        <a href="https://www.figma.com/proto/43utt4fzKoGgri1SN7r3DA/GBDA210-group-project?page-id=138%3A63&node-id=760-8953&node-type=frame&viewport=-333%2C407%2C0.11&t=cXZbHQBIaHyUNerR-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=760%3A8953" target="_blank">
+            <img src="image.png" alt="UX/UI Case Study Thumbnail">
+        </a>
 
-    <div class="modal" id="imageModal">
-        <img src="images/uxui-project-fullsize.jpg" alt="Full-size UX/UI Case Study">
-    </div>
 
-    <section id="resume">
-        <h2>Resume</h2>
-        <p>Explore my professional background and accomplishments. <a href="link-to-resume.pdf" target="_blank">View Resume</a>.</p>
-    </section>
+    <section id="Redesigning app">
+    <h2>Redesigning "大力赏" App </h2>
+    <p>Identifying pain points and creating a high-fidelity prototype for the 大力赏 app.</p>
+    <video autoplay muted width="300">
+        <source src="gbda2288.mp4" type="video/mp4">
+    </video>
+</section>
+
 
     <section class="gallery" id="gallery">
         <h2>Gallery</h2>
@@ -313,6 +290,5 @@
     <footer>
         <p>&copy; 2024 Lynette Shen. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        const caseStudyImage = document.getElementById("case-study-image");
+</body>
+</html>
