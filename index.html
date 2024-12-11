@@ -152,6 +152,42 @@
             box-shadow: 0 8px 15px rgba(255, 87, 34, 0.5);
         }
 
+        /* UX/UI Case Study Interactive Image */
+        .case-study img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .case-study img:hover {
+            transform: scale(1.01);
+            opacity: 0.85;
+        }
+
+        /* Lightbox Modal for Image Preview */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -212,7 +248,9 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
-            <li><a href="#gallery">Drawings Gallery</a></li>
+            <li><a href="#ux-ui">UX/UI Case Study</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#gallery">General Designs</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -231,13 +269,46 @@
         <p>My hobbies include drawing, photography, and exploring the latest trends in design and tech. Check out my gallery to see some of my favorite works!</p>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- UX/UI Case Study Section with Interactive Image -->
+    <section class="case-study" id="ux-ui">
+        <h2>UX/UI Case Study</h2>
+        <p>This section showcases a UX/UI design case study I worked on. Click on the image below to explore the project details.</p>
+        <img src="images/uxui-project-thumbnail.jpg" alt="UX/UI Case Study Image" id="case-study-image">
+    </section>
+
+    <!-- Modal for Viewing Larger Image -->
+    <div class="modal" id="imageModal">
+        <img src="images/uxui-project-fullsize.jpg" alt="Full-size UX/UI Case Study">
+    </div>
+
+    <script>
+        const caseStudyImage = document.getElementById("case-study-image");
+        const modal = document.getElementById("imageModal");
+
+        // Open modal on image click
+        caseStudyImage.addEventListener("click", () => {
+            modal.classList.add("open");
+        });
+
+        // Close modal if clicked on the background
+        modal.addEventListener("click", () => {
+            modal.classList.remove("open");
+        });
+    </script>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Check out my professional background and experience. I have worked on a variety of design and creative projects that have helped me grow as a designer. You can view my full resume by <a href="link-to-resume.pdf" target="_blank">clicking here</a>.</p>
+    </section>
+
+    <!-- Gallery Section for General Designs -->
     <section class="gallery" id="gallery">
-        <h2>Drawings Gallery</h2>
-        <img src="images/project1.jpg" alt="Project 1">
-        <img src="images/project2.jpg" alt="Project 2">
-        <img src="images/project3.jpg" alt="Project 3">
-        <img src="images/project4.jpg" alt="Project 4">
+        <h2>General Designs</h2>
+        <img src="images/design1.jpg" alt="Design 1">
+        <img src="images/design2.jpg" alt="Design 2">
+        <img src="images/design3.jpg" alt="Design 3">
+        <img src="images/design4.jpg" alt="Design 4">
     </section>
 
     <!-- Contact Section -->
@@ -253,7 +324,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Lynette Shen. All rights reserved.</p>
+        <p>&copy; 2024 Lynette Shen. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
